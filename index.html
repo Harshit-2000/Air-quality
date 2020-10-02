@@ -2,121 +2,39 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <script src="https://kit.fontawesome.com/9f3cf3236d.js" crossorigin="anonymous"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Piazzolla&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style.css">
-    
-    <title>Air Quality Index!</title>
+    <link rel="stylesheet" href="style.css">
+    <title>Stone Papers cissor</title>
 </head>
 <body>
-    <header>
-        <h1>Air Quality Index</h1>
-        <i class="fas fa-info-circle " id="help"></i>
-        <!-- <p id="help_img">Apple adsavjuosvovabovudh osdjfviwen09vfwni w9 woncon fuaso uus
-             svipsncwcumiaw
-             mvposmcpa,fcsaimfcpasfmcpsamfpcj wiovgsnjsg erlgj aevn gapsvn svasmcsucmogmac
-        </p> -->
-        <img src="https://yehaindia.com/wp-content/uploads/2019/12/air-quaity.jpg" alt="Air Quality Info." id="help_img">
-    </header>
-
-    <div class="selection">
-        <form action="" id="select" class="dropdown">
-            <label for="state">State</label>
-            <select name="state_select" id="state" aria-placeholder="state"></select>
-
-            <label for="city">City</label>
-            <select name="city_select" id="city"></select>
-            <button onclick="return false" id="submit" class="btn btn-primary">Get Info</button>
-        </form>
+    <header><h1>Rock Paper Scissor</h1></header>
+    <div class="scoreBoard">
+           <div class="label" id="user">User</div>
+           <div class="label" id="comp">Comp</div>
+           <span id="user_score">0</span>:<span id="comp_score">0</span>
+    </div>
+    <div class="result">
+        <h2 id="result">Let's Start.</h2>
     </div>
 
-        <h2 id="location">Amaravati, Andra Pradesh</h2>
-
-<div class="main">
-
-        <div class="info" id="info">
+    <div class="game">
+        <div class="choice" >
+            <img id = "r" src="https://img.pngio.com/rock-rock-paper-scissors-clipart-transparent-png-800x800-rock-paper-scissors-png-820_865.png" alt="rock">
             
-        <div class="top">
-
-            <div class="aqi_div">
-                <div id="aqi">00</div>
-                <label for="aqi" id ="aqi_label">AQI <small>(PM2.5)</small></label>
-            </div>
-
-            <div class="air_quality">
-                <div>Air Quality</div>
-                <div id="quality"></div>
-            </div>
-
-           
         </div>
 
-            <button class="btn btn-primary" id="more_button" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-               More
-            </button>
+        <div class="choice" >
+            <img id = "p" src="https://www.pngitem.com/pimgs/m/266-2667252_transparent-rock-paper-scissors-clipart-rock-paper-scissors.png" alt="paper">
             
-            <div class="collapse" id="collapseExample">
-                <div class="card card-body" id ="more">
-
-                    <div class="pollutant_div">
-                    <div id="pollutant">p1</div>
-                    <label for="pollutant" id="pollutant_label">Main Pollutant</label>
-                    </div>
-                    
-                    <div class="temp_div">
-                    <span id="temp">00</span> °C<br>
-                    <label for="temp">Temprature</label>
-                    </div>
-
-                    <div class="humidity_div">
-                    <span id="humidity">00</span> %<br>
-                    <label for="humidity">Humidity</label>
-                    </div>
-
-                    <div class="wind_speed_div">
-                    <span id="wind_speed">00</span> m/s <br>
-                    <label for="wind_speed">Wind Speed</label>
-                    </div>
-                    
-                    <div class="pressure_div">
-                    <span id="pressure">0000</span> hPa <br>
-                    <label for="pressure">Pressure</label>
-                    </div>
-
-                </div>
-            </div>
         </div>
-
-    <div  id='map'></div> 
-</div>
-
-    <footer id="footer">
-        Contact <a href="https://www.linkedin.com/in/harshit-singh-316b101b2" target="_blank"><img id="linkedin" src="https://www.iconfinder.com/data/icons/logotypes/32/square-linkedin-512.png" alt="LinkedIn" ></a>
-    </footer>
-
-
-    
-<link  rel="stylesheet"  href="http://cdn.leafletjs.com/leaflet-0.7.5/leaflet.css"  />  
-<script  src="http://cdn.leafletjs.com/leaflet-0.7.5/leaflet.js"></script>  
-  
-<script>  
-      var  OSM_URL  =  'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';  
-      var  OSM_ATTRIB  =  '&copy;  <a  href="http://openstreetmap.org/copyright">OpenStreetMap</a>  contributors';  
-      var  osmLayer  =  L.tileLayer(OSM_URL,  {attribution:  OSM_ATTRIB});  
-  
-      var  WAQI_URL    =  "https://tiles.waqi.info/tiles/usepa-aqi/{z}/{x}/{y}.png?token=_TOKEN_ID_";  
-      var  WAQI_ATTR  =  'Air  Quality  Tiles  &copy;  <a  href="http://waqi.info">waqi.info</a>';  
-      var  waqiLayer  =  L.tileLayer(WAQI_URL,  {attribution:  WAQI_ATTR});  
-  
-      var  map  =  L.map('map').setView([28.7041,  77.1025],  6);  
-      map.addLayer(osmLayer).addLayer(waqiLayer);  
-</script>
-
-    <script src="./script.js"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+        
+        <div class="choice">
+            <img  id = "s" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQuYVeAM_u2mCoO-hWoN7QrjW7S9r56UTfIkQ&usqp=CAU" alt="scissor">
+            
+        </div>
+    </div>
+    <div class="makemove"><h2>Make your move.</h2></div>
+        
+    <script src="script.js"></script>
 </body>
 </html>
